@@ -1,3 +1,8 @@
+{% extends "template.html" %}
+{% block content %}
+
 {{ post.html|safe }}
 {{ post.title }}
 {{ post.date }}
+
+{% endfor %}

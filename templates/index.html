@@ -1,0 +1,33 @@
+{% extends "template.html" %}
+
+{% block content %}
+<div id="content">
+    <h1 class="center">
+        Welcome to the <span class="highlight">AskSaturn</span>:
+    </h1>
+<p>This website enables Doctors and Patients to evaluate the antibiotics therapy regarding the risk of ESBLs acquisition. It is a result of the work performed by the groups of the  SATURN WP4 package. </p>
+
+<p>
+We have data of the  10,000 Patients collected over three years, in three European hospitals. Patients were tested on the presence of MRSA and ESBLs in their nose and rectal swabs respectively.  For each of the patients, there is an extensive metadata file collected containing information about patient's age, gender, health, hospitalization history, reasons for admission, treatment and the antibiotics treatment in the hospital.  The patients were also tested for ESBL/MRSA throughout antibiotics therapy and at the discharge from the hospital independently of the being prescribed antibiotics.
+
+<p>
+From the supervised machine learning perspective, a record for a single patient is a data item, and the result of their ESBL/MRSA therapy or discharge testing constitutes a class vector. Patients metadata and antibiotics therapy were encoded as a numerical vector.   Only patients negative at hospital admission were included into a machine learning. A Random Forest was trained on such prepared data.
+</p>
+<p>
+This website enables users to probe the trained Random Forest classifier.  The button below leads to the form collecting the metadata for the hypothetical patient. The results of the form are presented as a numerical vector, and the probability of belonging to the positive class is computed.
+</p>
+
+    <div class="alignCenter">
+        <input type="button" id="start-form-button" value="ASK SATURN!"
+            onclick="window.location.href='{{ url_for('asksaturn') }}'; " >
+   </div>
+
+    <p>
+        Complete methodology has been published in the:
+    </p>
+
+
+</div>
+
+{% endblock %}
+
