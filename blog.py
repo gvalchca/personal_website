@@ -1,3 +1,4 @@
+""" blog """
 import sys
 from flask import Flask, render_template
 from flask_flatpages import FlatPages, pygments_style_defs
@@ -9,10 +10,12 @@ FLATPAGES_EXTENSION = '.md'
 # FLATPAGES_ROOT = 'content'
 POST_DIR = 'posts'
 
-app = Flask(__name__)
+static_path = '/Users/agorska/ania/code/blog/static'
+app = Flask(__name__, static_url_path=static_path)
 flatpages = FlatPages(app)
 freezer = Freezer(app)
 app.config.from_object(__name__)
+
 
 # Routes
 @app.route('/')
@@ -21,13 +24,24 @@ def index():
 
 
 @app.route("/projects")
-def home():
+def projects():
     """ home """
     return render_template("projects.html")
 
 
+@app.route("/contact")
+def contact():
+    """ home """
+    return render_template("contact.html")
+
+
+@app.route("/contact_results")
+def contact_results():
+    return render_template('contact_results.html')
+
+
 @app.route("/blog/")
-def posts():
+def blog():
     posts = [p for p in flatpages if p.path.startswith(POST_DIR)]
     posts.sort(key=lambda item: item['date'], reverse=False)
     return render_template('blog.html', posts=posts)
