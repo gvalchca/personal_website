@@ -9,6 +9,7 @@
  </head>
  <body>
     <header>
+      <div id="container">
       <div class="BigSpacer"></div>
       <div class="vertical"><nav><ul>
         <li><a href="{{ url_for('index') }}">Home</a></li>
@@ -16,9 +17,9 @@
         <li><a href="{{ url_for('blog') }}">Blog</a></li>
         <li><a href="{{ url_for('contact') }}">Contact</a></li>
       </ul></nav></div>
+    </div>
     </header>
-
-    <div id="container">
+    <div class="container">
          {% block content %}
          {% endblock %}
     </div>
