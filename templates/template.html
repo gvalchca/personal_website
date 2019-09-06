@@ -2,21 +2,22 @@
 <html lang="en" dir="ltr">
  <head>
    <meta charset="utf-8">
-   <title>Flask Parent Template</title>
+   <title>A. Gorska personal page</title>
    <link rel=stylesheet type=text/css href="{{ url_for('static', filename='css/layout.css') }}">
 
 
  </head>
  <body>
     <header>
-      <div id="container">
-      <div class="BigSpacer"></div>
-      <div class="vertical"><nav><ul>
+      <div class="header">
+          <nav>
+        <ul>
         <li><a href="{{ url_for('index') }}">Home</a></li>
         <li><a href="{{ url_for('projects') }}">Projects</a></li>
         <li><a href="{{ url_for('blog') }}">Blog</a></li>
         <li><a href="{{ url_for('contact') }}">Contact</a></li>
-      </ul></nav></div>
+        </ul>
+      </nav>
     </div>
     </header>
     <div class="container">
