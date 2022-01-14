@@ -28,6 +28,16 @@ def projects():
     """ home """
     return render_template("projects.html")
 
+@app.route("/publications")
+def publications():
+    """ home """
+    return render_template("publications.html")
+
+@app.route("/cv")
+def cv():
+    """ home """
+    return render_template("cv.html")
+
 
 @app.route("/contact")
 def contact():
@@ -42,9 +52,7 @@ def contact_results():
 
 @app.route("/blog/")
 def blog():
-    posts = [p for p in flatpages if p.path.startswith(POST_DIR)]
-    posts.sort(key=lambda item: item['date'], reverse=False)
-    return render_template('blog.html', posts=posts)
+    return render_template('blog.html')
 
 
 @app.route('/blog/<name>/')
@@ -55,4 +63,4 @@ def post(name):
 
 
 if __name__ == '__main__':
-    app.run(host='0.0.0.0', port=5000)
+    app.run(host='0.0.0.0', port=7501)

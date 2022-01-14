@@ -3,28 +3,53 @@
  <head>
    <meta charset="utf-8">
    <title>A. Gorska personal page</title>
-   <link rel=stylesheet type=text/css href="{{ url_for('static', filename='css/layout.css') }}">
-
-
+    <link rel=stylesheet type=text/css href="{{ url_for('static', filename='css/layout.css') }}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=PT+Sans&family=PT+Sans+Narrow&family=Yellowtail&display=swap" rel="stylesheet">
  </head>
  <body>
-    <header>
-      <div class="header">
-          <nav>
-        <ul>
-        <li><a href="{{ url_for('index') }}">Home</a></li>
-        <li><a href="{{ url_for('projects') }}">Projects</a></li>
-        <li><a href="{{ url_for('blog') }}">Blog</a></li>
-        <li><a href="{{ url_for('contact') }}">Contact</a></li>
-        </ul>
-      </nav>
-    </div>
+  <div class="page">
+    <div class="page__side">
+    <header class="page__header">
+        
+        <div class="page__short__bio">
+            <h2> Ania Górska, PhD </h2>
+             Bioinformatician in <br>  infectious diseases 
+        </div>
+
+
+        <nav>
+        <ul class="page__header__list">
+        <li><a href="{{ url_for('index') }}" class="top-link {{'top-link-active' if active_page == 'about' else ''}}">About</a></li>
+        <li><a href="{{ url_for('projects') }}" class="top-link {{'top-link-active' if active_page == 'projects' else ''}}"> Research </a></li>
+        <li><a href="{{ url_for('publications') }}" class="top-link {{'top-link-active' if active_page == 'publications' else ''}}">Publications</a></li>
+        <li><a href="{{ url_for('blog') }}" class="top-link {{'top-link-active' if active_page == 'blog' else ''}}">Thoughts</a></li>
+        <li><a href="{{ url_for('cv') }}" class="top-link {{'top-link-active' if active_page == 'cv' else ''}}" >CV</a></li>
+        <li><a href="{{ url_for('contact') }}" class="top-link {{'top-link-active' if active_page == 'contact' else ''}}" >Contact</a></li>
+         </ul>
+        </nav>
+      
     </header>
-    <div class="container">
+    
+  
+    <footer class="footer">
+        <div class="footer__main"> 2022 </div>
+    </footer>
+  </div>
+
+
+  <div class="page__content">
          {% block content %}
          {% endblock %}
-    </div>
- </body>
+  </div>
+ 
+
+  </div>
+
+
+
+</body>
 </html>
 
 
