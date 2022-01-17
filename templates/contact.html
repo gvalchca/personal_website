@@ -2,87 +2,20 @@
 {% set active_page = "contact" %}
 
 {% block content %}
-    <script src="{{ url_for('static', filename='js/jquery.idealforms.min.js') }}"></script>
+    <div class='note__title'> You can reach me by: </div>
+    <div class="note"> 
+    <div class='note__content__entry'>
+    <div class='note__content__date'>  email: </div>
+    </div>
 
-    <form action="/result/contact" name="contactForm" novalidate autocomplete="off" class="idealforms" method="post">
-        <div class="field">
-            <label class="main_Short">Title</label>
-            <div class="group">
-                <label><input name="title" type="radio" value="Mr">Mr</label>
-                <label><input name="title" type="radio" value="Ms">Ms</label>
-            </div>
-            <span class="error"></span>
-        </div>
+    <div class='note__content__entry'>
+    <div class='note__content__date'>  twitter:  </div>
+    </div>    
 
-        <div class="field">
-            <label class="main_Short">Name</label>
-            <input name="name" type="text">
-            <span class="error"></span>
-        </div>
-
-        <div class="field">
-            <label class="main_Short">Email</label>
-            <input name="email" type="text">
-            <span class="error"></span>
-        </div>
-
-        <div class="field">
-            <label class="main_Short">Message</label>
-            <textarea name="message" cols="30" rows="10"></textarea>
-            <span class="error"></span>
-        </div>
-
-        <div class="field buttons">
-            <button type="submit" class="submit">Send!</button>
-        </div>
-    </form>
+    
 
 </div>
 
-<script>
-    /* Call idealforms3 on actual form and declare rules
-     * for field validation.
-     */
-    var $formIdealforms = $('form.idealforms');
-
-
-    $($formIdealforms).idealforms({
-
-        // focus on the first invalid field after initialization of the form
-        silentLoad: false,
-
-        // validation rules. See https://github.com/elclanrs/jq-idealforms#adding-rules
-        rules: {
-            'title': 'minoption:1',
-            'name': 'required',
-            'email': 'required email',
-            'message': 'required minmax:20:200'
-        },
-
-        errors: {
-            'name': {
-                required: 'Please enter your full name',
-            }
-        },
-
-        // if submit button is pressed
-        onSubmit: function(invalid, e) {
-
-            // if form contains invalid fields
-            if (invalid) {
-                // prevent form from reloading.
-                // Jump back to first invalid field
-                e.preventDefault();
-                // show warning to user.
-                alert('Please fill in all ' + invalid +' fields!');
-            } else {
-                // Jump to result page.
-                //TODO: Adjust URL for Flask Server !!
-                $.post("{{ url_for('contact_results') }}");
-            }
-        }
-    });
-</script>
 {% endblock %}
 
 

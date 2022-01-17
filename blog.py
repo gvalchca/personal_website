@@ -25,13 +25,26 @@ def index():
 
 @app.route("/projects")
 def projects():
-    """ home """
     return render_template("projects.html")
+
+
+@app.route("/metaanalysis")
+def metaanalysis():
+    return render_template("metaanalysis.html")
+
+@app.route("/metagenomics")
+def metagenomics():
+    return render_template("metagenomics.html")
+
+@app.route("/clinical")
+def clinical():
+    return render_template("clinical.html")
+
 
 @app.route("/publications")
 def publications():
-    """ home """
     return render_template("publications.html")
+
 
 @app.route("/cv")
 def cv():

@@ -1,0 +1,20 @@
+{% extends "template.html" %}
+{% set active_page = "clinical" %}
+
+{% block content %}
+    <div class="note">
+            <div class='note__title'> Clinical data analysis </div>
+
+    I've carried out several projects (SATURN, Bloomy, COVID19, Readmission) analysing large and complex datasets of variables of different types to find the association with a minority group of specific importance. Routinely those datasets are analysed with multivariate logistic regression. I wanted to approach those analyses again to compare the logistic regression with the machine learning tools that could lead to tree-based clinical algorithms such as Decision tree or Random Forest. So comparing the Logistic Regression -> point system path to the Random Forest -> Decision Tree path. And maybe publish the code base + visualisation alongside.
+
+    <!-- note__content__title -->
+    <div class='note__content__entry'>
+    <div class='note__content__title'>  ValueDX </div>
+     Development of the clinical algorithm for diagnosis of the community acquired respiratory-tract infections.
+    </div>
+        
+    <div class='note__content__entry'>
+    <div class='note__content__title'>  Readmissions </div>
+      Building a machine-learning model to predict readmissions from clinical data., Collaborator: Prof. Dr. med. Mical Paul, Rambam Health Care Campus, Haifa, Israel.
+    </div>
+{% endblock %}
