@@ -6,72 +6,79 @@
     <link rel=stylesheet type=text/css href="{{ url_for('static', filename='css/layout.css') }}">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=PT+Sans&family=PT+Sans+Narrow&family=Yellowtail&display=swap" rel="stylesheet">
+    
+
+
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+
 
 
  </head>
+
  <body>
   <div class="page">
-    <div class="page__side">
-    <header class="page__header">
-        
-        <div class="page__short__bio">
-            <h2> Ania Górska, PhD </h2>
-             Bioinformatician in <br>  infectious diseases 
+        <div class="page__short__bio"> 
+            <div class="page__short__bio__main"> Ania Górska,  PHD </div> 
+            <div class="page__short__bio__side">Bioinformatics perspective on infectious diseases</div> 
         </div>
+    <div class="page__side page__header">
 
+            <nav>
+                <ul class="page__header__list">
+                    <li>
+                        <a href="{{ url_for('index') }}" class="top-link {{'top-link-active' if active_page == 'about' else ''}}">
+                            About
+                        </a>
+                    </li>
 
-        <nav>
-        <ul class="page__header__list">
-        <li><a href="{{ url_for('index') }}" class="top-link {{'top-link-active' if active_page == 'about' else ''}}">About</a></li>
-        
-        <li><a href="{{ url_for('projects') }}" class="top-link {{'top-link-active' if active_page == 'projects' else ''}}"> Research </a></li>
+                    <li>
+                        <a href="{{ url_for('projects') }}" class="top-link {{'top-link-active' if active_page == 'projects' else ''}}">
+                            Research
+                        </a>
+                    </li>
+            
+                    <li>
+                        <a href="{{ url_for('cv') }}" class="top-link {{'top-link-active' if active_page == 'cv' else ''}}" >Experience
+                        </a>
+                    </li>
 
-            <div class="page__header__collapsable__list">    
-
-            <li><a href="{{ url_for('metaanalysis') }}" class="top-link top-sublink {{'top-link-active' if active_page == 'metaanalysis' else ''}}"> Systematic review </a></li>
-
-            <li><a href="{{ url_for('metagenomics') }}" class="top-link top-sublink {{'top-link-active' if active_page == 'metagenomics' else ''}}"> Human gut microbiome </a></li>
-
-            <li><a href="{{ url_for('clinical') }}" class="top-link top-sublink {{'top-link-active' if active_page == 'clinical' else ''}}"> Clinical data analysis </a></li>
-
-            </div>
-
-<!--         <li><a href="{{ url_for('publications') }}" class="top-link {{'top-link-active' if active_page == 'publications' else ''}}">Publications</a></li> -->
-        <li><a href="{{ url_for('blog') }}" class="top-link {{'top-link-active' if active_page == 'blog' else ''}}">Thoughts</a></li>
-        <li><a href="{{ url_for('cv') }}" class="top-link {{'top-link-active' if active_page == 'cv' else ''}}" >CV</a></li>
-        <!-- <li><a href="{{ url_for('contact') }}" class="top-link {{'top-link-active' if active_page == 'contact' else ''}}" >Contact</a></li>
-         </ul> -->
-        </nav>
-      
-    </header>
+                    <li>
+                        <a href="{{ url_for('teaching') }}" class="top-link {{'top-link-active' if active_page == 'teaching' else ''}}">
+                            Teaching
+                        </a>
+                    </li>
+                    
+                    <li>
+                        <a href="{{ url_for('blog') }}" class="top-link {{'top-link-active' if active_page == 'blog' else ''}}">Thoughts
+                        </a>
+                    </li>
+                </ul>
+            </nav>
     
-  
-    <footer class="footer">
-        <div class="footer__main"> You can reach me here: 
-        <div>
-            <a href = "mailto: ania.gorska@univr.it"><font size="+3">&#9993;</font></a>
-            <a href="https://www.researchgate.net/profile/Anna-Gorska-4"><i class="fab fa-researchgate" style="font-size:23px"></i></a>
-            <a href="https://twitter.com/gvalchca_agr"><i class="fa fa-twitter" style="font-size:23px"></i></a>
-        </div>
-        </div>
-
-       <!-- </div> -->
-    </footer>
-  </div>
-
-
-  <div class="page__content">
+            <div class='contact'>   
+                    <a href = "mailto: ania.gorska@univr.it"><font size="+3">&#9993;</font></a>
+                    <a href="https://www.researchgate.net/profile/Anna-Gorska-4"><i class="fab fa-researchgate" style="font-size:23px"></i></a>
+                    <a href="https://twitter.com/gvalchca_agr"><i class="fa fa-twitter" style="font-size:23px"></i></a>
+                    <a href="https://scholar.google.com/citations?hl=en&user=c8w_6xwAAAAJ&view_op=list_works&sortby=pubdate"><i class="ai ai-google-scholar ai-4x" style="font-size:23px"></i></a>
+                    <a href='https://orcid.org/0000-0003-3305-8711'><i class="ai ai-orcid ai-4x" style="font-size:23px"></i></a> </div>
+        <!-- </header>  -->
+         
+    </div>
+    
+    <div class="page__content">
          {% block content %}
          {% endblock %}
-  </div>
- 
-  <!-- </div> -->
+    </div>
+    
+    <footer class="footer">
+        <div class="footer__main"> created by Ania Górska </div>
+        <div class="footer__aside">  2022 </div>
+    </footer>
 
-
-
+    </div>
+    
 </body>
 </html>
 

@@ -1,16 +1,98 @@
 {% extends "template.html" %}
-{% set active_page = "metagenomics" %}
+{% set active_page = "projects" %}
+
+<!-- {% set active_page = "metagenomics" %} -->
 
 {% block content %}
 
-    <div class="note">
-    <div class='note__title'>  Human Gut Microbiome  </div>
+    <div class="div__button div__button__metagenomics">
+        <div class="div__button_content"> <div class="note__title">Metagenomics</div></div>
+    </div>     
 
-    We have analysed the 16S rRNA in the face of COVID. With 16S we can review only the taxonomical content of the gut microbiome under the pressure of covid and its development to the followup, for patients who suffer from long-covid and those that have recovered. We weren't able to see a definite negative impact of the antibiotics on the recovery. As in the acute phase, the impact of covid and hospitalisation covers the possible impact of the antibiotics. There are not enough people in follow-up to see the antibiotics impact. I am hoping in the Whole Genome Sequencing. We will be able to see that even if the taxonomic composition of the gut recovers, the antibiotic resistance genes are promoted more in the people who were given antibiotics in the acute phase of the covid. 
+
+
+    <div class="note">
+    <div class='note__content__title'>  Introduction  </div>
+        <p>
+        I've started working on the metagenomics projects after I joined the <a href='https://uni-tuebingen.de/fakultaeten/mathematisch-naturwissenschaftliche-fakultaet/fachbereiche/informatik/lehrstuehle/algorithms-in-bioinformatics/people/daniel-huson/'>group of Prof. Daniel Huson at the University of Tuebingen</a>, where I did my PHD. I was always interested in the applied part of the bioinformatics, so all my PHD projects were driven by a biological or clinical questions. 
+        </p>
+        <p>
+        My PhD projects focused on the Human Gut Microbiome, which is an essential factor in antibiotic resistance emergence in the context of medicine. As it is full of nutrients and packed with bacteria, the gut constitutes a perfect environment for speeding up bacterial evolution. Each antibiotic therapy drives the emergence and retention of antibiotic resistance genes within the human gut microbiome.
+        </p>
+
+    </div>
+    
+    <div class="note">
+    <div class='note__content__title'>MEGAN</div>
+       <p>
+        Microbiome analysis and especially metagenomics was one of the leading research fields of the prof. Huson's group where I did my PhD. We developed tools (<a href="https://uni-tuebingen.de/fakultaeten/mathematisch-naturwissenschaftliche-fakultaet/fachbereiche/informatik/lehrstuehle/algorithms-in-bioinformatics/software/megan6/">MEGAN</a>) and programmatic challenges of the microbiome analysis. My main contribution was setting up a  <a href="http://megan.informatik.uni-tuebingen.de/">MEGAN user community</a>, and providing the basic instructions. Currently, the forum is being maintained by the collegues in the group. Upade to MEGAN was published in the following publicaiton:
+        </p>
+
         <div class='note__content__entry'>
-            <div class='note__content__title'> Gut microbiome in COVID </div>
+        <div class='note__content__date'> 2016 </div>
+        Huson D., Beier S., Flade I., Górska A., El-Hadidi M., Mitra S., and others, <a href="https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1004957"> MEGAN Community Edition - Interactive Exploration and Analysis of Large-Scale Microbiome Sequencing Data</a>, PLoS
+        Computational Biology.
+        </div>
+        <p>
+        The Whole-Genome metagenomics provides information about the relative abundance of the taxa and the proteins of specific function across an array of functional classifications. However, short reads do not provide information on what functions and taxa are together. Long read technologies will bring breakthroughs in metagenomics analysis. However, the long read flipped the algorithmic paradigm of the metagenomic analysis - as now the reads now contain multiple hits from the database, and that the NanoPore is characterized with a different errors that can break the aligners. In the Huson lab we worked on bringing the long reads into metagenomic sequencing and MEGAN. All of the tools needed updating to the new method. From both short Illumina sequencing and NanoPore sequencing of the content of the bioreactor, we were able to extract several full circular genomes of the bacteria, and annotate them with an array of the genes. My role in this publication was analysing and plotting the assembled and corrected genmoes:
+        </p>
+        
+        <div class='note__content__entry'>
+        <div class='note__content__date'> 2019, Microbiome</div>
+        Arumugam K., Bağcı, C., Bessarab, I., Beier, S., Buchfink, B., Górska, A., Qiu, G., Huson, D. H., Williams R., <a href="https://microbiomejournal.biomedcentral.com/articles/10.1186/s40168-019-0665-y"> Annotated bacterial chromosomes from frame-shift-corrected long read metagenomic data</a>
         </div>
     </div>
+
+    <div class='note'> <div class='note__content__title'> Phageome and the human gut microbiome </div>
+        <p>
+            In this project, we studied only two participants for the six timepoints: before ciprofloxacin therapy, in the first, third, 6th day of the treatment - then 2 days after the therapy ended and 28 days after. The gut microbiome samples were sequenced in two different modes: ultra-deep whole-genome shotgun metagenomics on the MiSeq. A phage-only sequencing used a specialised protocol to extract the viral-like particles first and in the second step the DNA. This setup enabled to study how the structure of the gut microbiome reconstructs after the powerful disturbant that is the therapy with the fluoroquinolone. 
+        </p>
+        
+        
+        <figure>
+        <img src="{{ url_for('static', filename='img/phages_kmers.png') }}" alt="phagenome setup" width="100%">
+        <figcaption> K-mer correlation for both participants, and the both sequencing sets. The  </figcaption>
+        </figure>
+
+        <p>
+        The depth of sequencing in the WGS allowed me to analyse through the assembly - I've assembled all of the samples and then re-mapped the reads to the fragments. The fragments were annotated with an array of the tools. Thus, each feature from the annotation tools could be tied to the overall prevalence within the sample by transforming and summarising the number of reads that mapped to the fragnemnt. 
+        </p>
+
+
+
+        <figure>
+        <img src="{{ url_for('static', filename='img/ciprofloxacin.png') }}" alt="ciprofloxacin flow" width="95%">
+        <figcaption>  Heatmap showing the transfer of the ciprofloxacin resistance (gyrA) from the bactieral chromosomes to the mobile genetic elements and all the way to the free viral-like particles.</figcaption>
+        </figure>
+
+        <p>    
+        However, the details on how the resistance spreads between bacteria within the human gut remain unknown, as does the role of horizontal gene transfer in this process, too. We present a novel approach to the analysis of time-series whole-genome metagenomic sequencing data. This involves partitioning the scaffolds from the metagenomic assembly into groups corresponding to bacterial chromosomes, plasmids and those with prophages and transposons. Using specialized sequencing of the bacteriophages we were able to track the flow of ciprofloxacin resistance genes from bacterial chromosomes, through the plasmids, to prophages and phages.
+        </p>
+        
+
+        <div class='note__content__entry'>
+        <div class='note__content__date'> 2018, Computational Biology and Chemistry </div>
+        Górska, A., Peter, S., Willmann, M., Autenrieth, I., Schlaberg, R., Huson, D.H., 2018. <a href="https://www.sciencedirect.com/science/article/abs/pii/S1476927118301439?via%3Dihub"> Dynamics of the human gut phageome during antibiotics treatment</a>.
+
+        Full description can be found in this <a href="https://www.biorxiv.org/content/10.1101/793737v1.full"> preprint</a>.
+        </div>  
+    </div>
+
+    
+
+    <div class='note'>
+        <div class='note__content__title'> Current and future work </div>
+    
+
+
+    </div>
+
+
+
+
+<form action="{{ url_for('projects') }}">
+    <input type="submit" value="Return" />
+</form>
 
 
 {% endblock %}

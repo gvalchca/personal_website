@@ -1,17 +1,83 @@
 {% extends "template.html" %}
-{% set active_page = "metaanalysis" %}
+{% set active_page = "projects" %}
+
+<!-- {% set active_page = "metaanalysis" %} -->
 
 {% block content %}
+<!-- <div class='note__title'> Systematic review </div> -->
 
+<div class="div__button div__button__metaanalysis">
+    <div class="div__button_content">
+        <div class="note__title">Systematic review</div>
 
-    <div class="note">
-    <div class='note__title'>  Systematic Review and meta-analysis  </div>
-    I am working across different topics to automatise/visualise/bring to life the process of systematic reviews regardless of their scientific question. Pubmed search is automatised nicely. I've also added machine learning to learn the acceptance/rejection from the abstract and title. In the end, one could imagine a web-based toolkit across different systematic reviews running in our group that could listen and notify if new papers appear, could visualise the outcomes, etc. We could offer a collaboration to the WP10 to bring together the systematic reviews of the ORCHESTRA. 
-
-        <div class='note__content__entry'>
-            <div class='note__content__title'>  ORCHESTRA </div>
-            A member of the coordinator team, delegated to the data collection and analysis (Work-Package 7).
-        </div>        
     </div>
+</div>
+
+
+<div class="note"> 
+    <div class='note__content__title'> Introduction </div>
+    <p>
+    The systematic review is one of the crucial methods providing actionable knowledge in medicine. It is a structured, formalized process of gathering information from published research. It starts from setting a research question and constructing a search strategy for the publication database, most commonly PubMed. The resulting publications are first reviewed based on the Title and abstract so that the publications that are obviously outside of scope can be rejected. Next, the information is extracted from the publications that passed the initial screening. Finally, depending on the research question and the extraction process, the data might be further meta-analyzed, i.e., the statistical method can be applied to summarize it so that the initial question can be answered. Typically, this process is quite labour intensive, therefore although extremly valuable, its not possible to deploy a systematic review for every question.
+    </p>
+
+    <p>
+    Applied bioinformaticians often find themselves at the end of the rope, not being able to interpret the results of their work due to a lack of domain knowledge and complexity of such results. In that case, we often try to access or create a resource that would complement the domain knowledge. The systematic review provides a framework for such queries. Thus I am interested in computerizing the process of systematic review so that eventually information can be retrieved from the set of publications.
+    </p>
+    </div>
+
+<div class="note"> 
+<div class='note__content__title'> Value-Dx </div>
+        
+    <p>
+    <a href='https://www.value-dx.eu/'>Value-DX</a> project is a 4-year long EU-funded project aiming at reducing antibiotic prescribing via proper diagnostics of community-acquired respiratory tract infections (CA-ARTI). We were a part of <a href='://www.value-dx.eu/index.php/work-package-1/'> Work Package 1 </a>tasked with developing an evidence-based clinical algorithm to diagnose the aetiology of the CA-ARTI. 
+    </p>
+
+    <p>
+    In the first step, we have conducted a comprehensive meta-analysis of the diagnostic test accuracy of the point of care tests for the pathogens causing respiratory tract infections. A rationale was that knowing the landscape of the diagnostic tools and their characteristic would enable us to create an algorithm to drive a diagnostic path depending on the current prevalence and patient's symptoms. My role in the meta-analysis was automatizing and conducting PubMed and Web of Science searches, exporting search results and statistical analysis of the extracted data, and visualising the results.
+    </p>
+
+    <p>
+    The project started in the March 2019, before the COVID pandemic changed the lives of the infectious diseases doctors and scientists. We have published the results of the DTA meta-analysis:
+    </p>
+
+    <div class='note__content__entry'> 
+
+        <div class='note__content__date'> 2022, Clinical Microbiology and Infection </div>
+        Gentilotti E.,  De Nardo P., Cremonini E., Górska A., Mazzaferri F., Canziani M. L., Hellou M. M., Olchowski Y.,  Poran I., Leeflang  M., Villacian J.,  Goossens  H., Paul M., Tacconelli E.,
+        <a href="https://www.clinicalmicrobiologyandinfection.com/article/S1198-743X(21)00551-6/fulltext"> Diagnostic accuracy of point-of-care tests in acute community-acquired lower respiratory tract infections. A systematic review and meta-analysis</a>. 
+    </div>
+
+    as well as a publication on the SARS-CoV-2 nucleic-acid-amplification detection techniques early in the pandemic: 
+
+    <div class='note__content__entry'> <div class='note__content__date'> 2020,  Clinical Microbiology and Infection </div>
+        Hellou, M. M., Górska, A., Mazzaferri, F., Cremonini, E., Gentilotti, E., De Nardo, P., Paul, M.<a href="https://www.clinicalmicrobiologyandinfection.com/article/S1198-743X(20)30695-9/fulltext"> Nucleic-acid-amplification tests from respiratory samples for the diagnosis of coronavirus infections: systematic review and meta-analysis</a>
+    </div>
+    
+
+</div>
+
+<div class="note"> 
+    <div class='note__content__title'> Current and future work </div>
+    <p>
+    Currently I'm working on automatization of the screening using FastText and other NLP-tools. To be able to bring to life the concluded meta-analysis, i.e. to run deamons that would screen the recently published papers and notify the collaborators about the need to incude the publicaiton into the meta-analuysis.
+    </p>
+
+Currently I collaborate with doctors across different systematic reviews or meta-analysis to 
+
+<a href="https://metaanalysis.aniagorska.me/"> Emerging topics </a>
+
+</div>
+
+
+
+
+<form action="{{ url_for('projects') }}">
+    <input type="submit" value="Back to Research" />
+</form>
+
+
+
+
+
 
 {% endblock %}

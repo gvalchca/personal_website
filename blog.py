@@ -23,10 +23,21 @@ def index():
     return render_template("index.html")
 
 
+@app.route("/teaching")
+def teaching():
+    return render_template("teaching.html")
+
+@app.route("/molecular")
+def molecular():
+    return render_template("molecular.html")
+
 @app.route("/projects")
 def projects():
     return render_template("projects.html")
 
+@app.route("/visualisation")
+def visualisation():
+    return render_template("visualisation.html")
 
 @app.route("/metaanalysis")
 def metaanalysis():

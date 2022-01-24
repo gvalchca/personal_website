@@ -1,20 +1,50 @@
 {% extends "template.html" %}
-{% set active_page = "clinical" %}
+<!-- {% set active_page = "projects" %} -->
+<!-- {% set active_page = "clinical" %} -->
 
 {% block content %}
+    <div class="div__button div__button__clinicaldata">
+        <div class="div__button_content"> <div class="note__title">Clinical data analysis</div></div>
+      </div>
+
     <div class="note">
-            <div class='note__title'> Clinical data analysis </div>
-
+    <div class='note__content__title'> Introduction </div>
+    <p>
     I've carried out several projects (SATURN, Bloomy, COVID19, Readmission) analysing large and complex datasets of variables of different types to find the association with a minority group of specific importance. Routinely those datasets are analysed with multivariate logistic regression. I wanted to approach those analyses again to compare the logistic regression with the machine learning tools that could lead to tree-based clinical algorithms such as Decision tree or Random Forest. So comparing the Logistic Regression -> point system path to the Random Forest -> Decision Tree path. And maybe publish the code base + visualisation alongside.
+    </p>
 
-    <!-- note__content__title -->
-    <div class='note__content__entry'>
+    <div class="note">
+    <div class='note__content__title'>  Bloomy </div>
+    <div class='note__content__date'> 2022 </div>
+    Tacconelli E., Göpel S., Gladstone B. P, Eisenbeis S., Hölzl F., Buhl M., Górska A., Cattaneo C., Mischnik A., Rieg S., M Rohde A., Kohlmorgen B., Falgenhauer J., Trauth J., Käding N., Kramme E., Biehl L. M , Walker S. V , Peter S., Gastmeier P., Chakraborty T., JGT Vehreschild M., Seifert H., Rupp J., Kern W. V. <a href="https://www.thelancet.com/journals/laninf/article/PIIS1473-3099(21)00587-9/fulltext"> Articles Development and validation of BLOOMY prediction scores for 14-day and 6-month mortality in hospitalised adults with bloodstream infections: a multicentre, prospective, cohort study. </a> Lancet Infectectious Diseases 3099, 1–11 .
+    </div>
+
+
+    <div class="note">
+    <div class='note__content__title'>  SATURN </div>
+
+        <div class='note__content__entry'>
+        <div class='note__content__date'> 2019 </div>
+        Tacconelli, E., Górska A., Angelis, G., Lammens, C., Restuccia, G., Huson, D. H.,...Kazma, M. <a href="https://www.sciencedirect.com/science/article/pii/S1198743X19302472"> Estimating the Association between Antibiotic Exposure and Colonisation with Antibiotic-resistant Bacteria using Machine-learning Methods</a>, Journal of Antimicrobial Chemotherapy.
+        </div>
+    </div>
+
+
+    <div class="note">
     <div class='note__content__title'>  ValueDX </div>
      Development of the clinical algorithm for diagnosis of the community acquired respiratory-tract infections.
     </div>
         
-    <div class='note__content__entry'>
-    <div class='note__content__title'>  Readmissions </div>
-      Building a machine-learning model to predict readmissions from clinical data., Collaborator: Prof. Dr. med. Mical Paul, Rambam Health Care Campus, Haifa, Israel.
+    <div class="note">
+    <div class='note__content__title'> Current and future work </div>
+      
+        Readmissions
+        Building a machine-learning model to predict readmissions from clinical data., Collaborator: Prof. Dr. med. Mical Paul, Rambam Health Care Campus, Haifa, Israel.
     </div>
+
+    
+<form action="{{ url_for('projects') }}">
+    <input type="submit" value="Back to Research" />
+</form>
+
 {% endblock %}

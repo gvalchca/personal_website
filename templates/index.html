@@ -3,22 +3,24 @@
 {% block content %}
 
 
-<div class="note">
-<div class='note__title'>  HI! </div>
+<div class="note__horizontal"> 
+	<div class="note__hi">
+	<h2> Hi, </h2>
+	<p>
+	I'm a bioinformatician working in the field of infectious diseases. I study emergence of antibiotic resistance across levels of a biological organization with various data types and methodologies. Currently, I'm a PostDoc in the Infectious Diseases department headed by prof. Evelina Tacconelli in the University of Verona. My time is split between the metaanalysis, clinical data and metagenomics, mostly in the EU-funded <a href='https://orchestra-cohort.eu'>Orchestra</a> and <a href='https://www.value-dx.eu/'>Value-DX</a> projects. 
+	</p>
+
+	<p>
+	On this website, I would like to present the scope of my projects across: <a href="{{ url_for('metaanalysis') }}"> mata-analysis</a>, <a href="{{ url_for('metagenomics') }}">clinical metagenomics</a>, <a href="{{ url_for('clinical') }}">clinical data analysis and management</a>, and <a href="{{ url_for('molecular') }}">molecular dynamics</a>, as well as other related activities: <a href="{{ url_for('visualisation') }}">scientific visualisation</a>, <a href="{{ url_for('teaching') }}">teaching</a> and some other small <a href="{{ url_for('blog') }}"> pieces of writing </a>. 
+	</p>
+
+	<h3 style='text-align: right; padding-right: 50px;'> Ania Górska </h3>
+	<!-- <h4 style='text-align: right; padding-right: 50px;'>  </h4> -->
 
 
+
+	</div>
 </div>
-
-<img src="{{ url_for('static', filename='img/defense.jpg') }}" alt="ania" width="140" > 
-
-
-<div class="note">
-
-	
-	<
-</div>
-
-
 
 {% endblock %}
 

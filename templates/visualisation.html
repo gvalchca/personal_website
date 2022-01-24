@@ -1,0 +1,31 @@
+{% extends "template.html" %}
+{% set active_page = "visualisation" %}
+
+{% block content %}
+
+
+    
+     <div class="div__button div__button__visualisation">
+        <div class="div__button_content"> <div class="note__title">Visualisation</div></div>
+    </div>         
+    
+    <div class="note">
+
+        <div class='note__content__entry'>
+            <div class='note__content__date'> 2021</div>
+            Pezzani, M. D. et al.<a href="https://www.clinicalmicrobiologyandinfection.com/article/S1198-743X(21)00006-9/fulltext">  Methodological quality of studies evaluating the burden of drug-resistant infections in humans due to the WHO Global Antimicrobial Resistance Surveillance System target bacteria</a>, Clinical Microbiology and Infection 27, 687–696.
+            </div>
+        </div>    
+
+
+        
+
+    </div>    
+    
+
+<form action="{{ url_for('projects') }}">
+    <input type="submit" value="Return" />
+</form>
+
+
+{% endblock %}
