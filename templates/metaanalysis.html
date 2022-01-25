@@ -1,20 +1,24 @@
 {% extends "template.html" %}
-{% set active_page = "projects" %}
-
-<!-- {% set active_page = "metaanalysis" %} -->
 
 {% block content %}
-<!-- <div class='note__title'> Systematic review </div> -->
 
+            
+<a href="{{ url_for('metaanalysis') }}" class="top--link--research"> 
 <div class="div__button div__button__metaanalysis">
-    <div class="div__button_content">
-        <div class="note__title">Systematic review</div>
-
-    </div>
+    <div class="div__button_content"><div class="note__title">Systematic review</div></div>
 </div>
+</a>
 
 
-<div class="note"> 
+
+<ul class="mini--menu" >    
+<li><a href="#introduction" class="top-link-mini" > Introduction</a></li>
+<li><a href="#valuedx" class="top-link-mini" >Value-Dx</a></li>
+<li><a href="#current_work" class="top-link-mini" >Current work</a></li>
+</ul>
+
+
+<div class="note" id='introduction'> 
     <div class='note__content__title'> Introduction </div>
     <p>
     The systematic review is one of the crucial methods providing actionable knowledge in medicine. It is a structured, formalized process of gathering information from published research. It starts from setting a research question and constructing a search strategy for the publication database, most commonly PubMed. The resulting publications are first reviewed based on the Title and abstract so that the publications that are obviously outside of scope can be rejected. Next, the information is extracted from the publications that passed the initial screening. Finally, depending on the research question and the extraction process, the data might be further meta-analyzed, i.e., the statistical method can be applied to summarize it so that the initial question can be answered. Typically, this process is quite labour intensive, therefore although extremly valuable, its not possible to deploy a systematic review for every question.
@@ -23,13 +27,16 @@
     <p>
     Applied bioinformaticians often find themselves at the end of the rope, not being able to interpret the results of their work due to a lack of domain knowledge and complexity of such results. In that case, we often try to access or create a resource that would complement the domain knowledge. The systematic review provides a framework for such queries. Thus I am interested in computerizing the process of systematic review so that eventually information can be retrieved from the set of publications.
     </p>
-    </div>
 
-<div class="note"> 
+    <div class='top--link--mini--div'><a href="#top" class="top-link-mini" >Top</a></div>
+
+</div>
+
+<div class="note" id='valuedx'> 
 <div class='note__content__title'> Value-Dx </div>
         
     <p>
-    <a href='https://www.value-dx.eu/'>Value-DX</a> project is a 4-year long EU-funded project aiming at reducing antibiotic prescribing via proper diagnostics of community-acquired respiratory tract infections (CA-ARTI). We were a part of <a href='://www.value-dx.eu/index.php/work-package-1/'> Work Package 1 </a>tasked with developing an evidence-based clinical algorithm to diagnose the aetiology of the CA-ARTI. 
+    <a href='https://www.value-dx.eu/'>Value-DX</a> project is a 4-year long EU-funded project aiming at reducing antibiotic prescribing via proper diagnostics of community-acquired respiratory tract infections (CA-ARTIs). We were a part of <a href='://www.value-dx.eu/index.php/work-package-1/'> Work Package 1 </a>tasked with developing an evidence-based clinical algorithm to diagnose the aetiology of the CA-ARTI. 
     </p>
 
     <p>
@@ -50,30 +57,29 @@
     as well as a publication on the SARS-CoV-2 nucleic-acid-amplification detection techniques early in the pandemic: 
 
     <div class='note__content__entry'> <div class='note__content__date'> 2020,  Clinical Microbiology and Infection </div>
-        Hellou, M. M., Górska, A., Mazzaferri, F., Cremonini, E., Gentilotti, E., De Nardo, P., Paul, M.<a href="https://www.clinicalmicrobiologyandinfection.com/article/S1198-743X(20)30695-9/fulltext"> Nucleic-acid-amplification tests from respiratory samples for the diagnosis of coronavirus infections: systematic review and meta-analysis</a>
+        Hellou, M. M., <b> Górska, A.</b>, Mazzaferri, F., Cremonini, E., Gentilotti, E., De Nardo, P., Paul, M.<a href="https://www.clinicalmicrobiologyandinfection.com/article/S1198-743X(20)30695-9/fulltext"> Nucleic-acid-amplification tests from respiratory samples for the diagnosis of coronavirus infections: systematic review and meta-analysis</a>
     </div>
     
+<div class='top--link--mini--div'><a href="#top" class="top-link-mini" >Top</a></div>
+
 
 </div>
 
-<div class="note"> 
-    <div class='note__content__title'> Current and future work </div>
+<div class="note" id='current_work'> 
+    <div class='note__content__title'> Current work </div>
     <p>
-    Currently I'm working on automatization of the screening using FastText and other NLP-tools. To be able to bring to life the concluded meta-analysis, i.e. to run deamons that would screen the recently published papers and notify the collaborators about the need to incude the publicaiton into the meta-analuysis.
+    Currently I'm working on automatization of the screening using Natural-Language processing tools and <a href="https://fasttext.cc">FastText</a>. To be able to automatise the initial screening in the systematic review process. 
     </p>
 
-Currently I collaborate with doctors across different systematic reviews or meta-analysis to 
+    <p>
+    I also collaborate with doctors to create tools for the analysis of the content of publication set. 
+    <!-- <a href="https://metaanalysis.aniagorska.me/"> Emerging topics </a> -->
+    </p>
 
-<a href="https://metaanalysis.aniagorska.me/"> Emerging topics </a>
+
 
 </div>
 
-
-
-
-<form action="{{ url_for('projects') }}">
-    <input type="submit" value="Back to Research" />
-</form>
 
 
 

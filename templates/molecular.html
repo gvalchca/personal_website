@@ -1,15 +1,32 @@
 {% extends "template.html" %}
-{% set active_page = "molecular" %}
+{% set active_page = "projects" %}
 
 
 {% block content %}
-   <div class="div__button div__button__molecular"> 
-      <div class="div__button_content">  
-          <div class="note__title">Molecular dynamics</div>
-      </div>
-   </div>
+    <a href="{{ url_for('molecular') }}" class="top--link--research"> 
+     <div class="div__button div__button__molecular"> 
+         <div class="div__button_content">  
+             <div class="note__title">Molecular dynamics</div>
+         </div>
+     </div>
+     </a>
    
-   <div class='note'>
+   <ul class="mini--menu" >    
+   <li><a href="#introduction" class="top-link-mini" > Introduction</a></li>
+   <li><a href="#pna" class="top-link-mini" > Designing a PNA molecule to halt bacterial translation </a></li>
+   </ul>
+
+
+
+   <div class="note" id='introduction'>
+    <div class='note__content__title'>  Introduction  </div>
+    </div>
+
+
+
+
+
+   <div class='note' id='PNA'>
       <div class='note__content__title'> Designing a PNA molecule to halt bacterial translation </div>
       <p>
       For my master's project I joined a BioNano laboratory at the Center for New Technologies, University of Warsaw, under supervision of <a href="https://cent.uw.edu.pl/pl/person/prof-joanna-trylska/"> prof. Joanna Trylska </a>. The project was financed from the grant called <a href="http://bionano.cent.uw.edu.pl/projects/team-project/"> TEAM-project</a>.
@@ -33,18 +50,15 @@
          <div class='note__content__date'> 2015, Nucleic Acids Research </div>
          Górska A., Jasiński M., and Trylska J., <a href="https://academic.oup.com/nar/article/43/17/e114/2414329"> MINT: Software to Identify Motifs and Short-Range Interactions in Trajectories of Nucleic Acids </a>
       </div>
-   </div>
-
-
-   <div class='note'>
-   <div class='note__content__title'>The project also resulted in the two webservers:  </div>
+   
+   <div class='note__content__title'>The project resulted in the two webservers:  </div>
       <p> <a href="http://mint.cent.uw.edu.pl/"> MINT webserver </a> to analyse and visualise an RNA molecule from a pdb file.<br>
       <a href="http://riboscanner.cent.uw.edu.pl"> RiboScanner </a> to browse and predict if the given sequence would bind to the bacterial rRNA. </p>
-   </div>
+   <!-- </div> -->
 
- </div>
+   <div class='top--link--mini--div'><a href="#top" class="top-link-mini" >Top</a></div>
 
-<form action="{{ url_for('projects') }}">
-   <input type="submit" value="Return" />
-</form>
+</div>
+
+ 
 {% endblock %}

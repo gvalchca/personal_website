@@ -1,31 +1,37 @@
 {% extends "template.html" %}
-{% set active_page = "visualisation" %}
+{% set active_page = "projects" %}
 
 {% block content %}
 
-
-    
-     <div class="div__button div__button__visualisation">
+ <a href="{{ url_for('visualisation') }}" class="top--link--research"> 
+    <div class="div__button div__button__visualisation">
         <div class="div__button_content"> <div class="note__title">Visualisation</div></div>
-    </div>         
+    </div>            
+</a>
+
+
+<ul class="mini--menu" >    
+   <li><a href="#introduction" class="top-link-mini" > Introduction</a></li>
+   <!-- <li><a href="#pna" class="top-link-mini" > Designing a PNA molecule to halt bacterial translation </a></li> -->
+   </ul>
     
+
+    <div class="note" id='introduction'>
+    <div class='note__content__title'>  Introduction  </div>
+    </div>
+
+
     <div class="note">
 
         <div class='note__content__entry'>
-            <div class='note__content__date'> 2021</div>
-            Pezzani, M. D. et al.<a href="https://www.clinicalmicrobiologyandinfection.com/article/S1198-743X(21)00006-9/fulltext">  Methodological quality of studies evaluating the burden of drug-resistant infections in humans due to the WHO Global Antimicrobial Resistance Surveillance System target bacteria</a>, Clinical Microbiology and Infection 27, 687–696.
+            <div class='note__content__date'> 2021, Clinical Microbiology and Infection</div>
+            Pezzani, M. D. et al.<a href="https://www.clinicalmicrobiologyandinfection.com/article/S1198-743X(21)00006-9/fulltext">  Methodological quality of studies evaluating the burden of drug-resistant infections in humans due to the WHO Global Antimicrobial Resistance Surveillance System target bacteria</a>
             </div>
-        </div>    
-
-
         
 
+
+       <div class='top--link--mini--div'><a href="#top" class="top-link-mini" >Top</a></div>
     </div>    
     
-
-<form action="{{ url_for('projects') }}">
-    <input type="submit" value="Return" />
-</form>
-
-
+    
 {% endblock %}

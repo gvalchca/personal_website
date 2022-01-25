@@ -1,50 +1,101 @@
 {% extends "template.html" %}
-<!-- {% set active_page = "projects" %} -->
-<!-- {% set active_page = "clinical" %} -->
-
+{% set active_page = "projects" %}
 {% block content %}
-    <div class="div__button div__button__clinicaldata">
+
+    <!-- <div class="div__button div__button__clinicaldata" id='top'>
         <div class="div__button_content"> <div class="note__title">Clinical data analysis</div></div>
-      </div>
+    </div> -->
 
-    <div class="note">
-    <div class='note__content__title'> Introduction </div>
-    <p>
-    I've carried out several projects (SATURN, Bloomy, COVID19, Readmission) analysing large and complex datasets of variables of different types to find the association with a minority group of specific importance. Routinely those datasets are analysed with multivariate logistic regression. I wanted to approach those analyses again to compare the logistic regression with the machine learning tools that could lead to tree-based clinical algorithms such as Decision tree or Random Forest. So comparing the Logistic Regression -> point system path to the Random Forest -> Decision Tree path. And maybe publish the code base + visualisation alongside.
-    </p>
-
-    <div class="note">
-    <div class='note__content__title'>  Bloomy </div>
-    <div class='note__content__date'> 2022 </div>
-    Tacconelli E., Göpel S., Gladstone B. P, Eisenbeis S., Hölzl F., Buhl M., Górska A., Cattaneo C., Mischnik A., Rieg S., M Rohde A., Kohlmorgen B., Falgenhauer J., Trauth J., Käding N., Kramme E., Biehl L. M , Walker S. V , Peter S., Gastmeier P., Chakraborty T., JGT Vehreschild M., Seifert H., Rupp J., Kern W. V. <a href="https://www.thelancet.com/journals/laninf/article/PIIS1473-3099(21)00587-9/fulltext"> Articles Development and validation of BLOOMY prediction scores for 14-day and 6-month mortality in hospitalised adults with bloodstream infections: a multicentre, prospective, cohort study. </a> Lancet Infectectious Diseases 3099, 1–11 .
-    </div>
-
-
-    <div class="note">
-    <div class='note__content__title'>  SATURN </div>
-
-        <div class='note__content__entry'>
-        <div class='note__content__date'> 2019 </div>
-        Tacconelli, E., Górska A., Angelis, G., Lammens, C., Restuccia, G., Huson, D. H.,...Kazma, M. <a href="https://www.sciencedirect.com/science/article/pii/S1198743X19302472"> Estimating the Association between Antibiotic Exposure and Colonisation with Antibiotic-resistant Bacteria using Machine-learning Methods</a>, Journal of Antimicrobial Chemotherapy.
+    <a href="{{ url_for('clinical') }}" class="top--link--research" id='top'>
+        <div class="div__button div__button__clinicaldata">
+            <div class="div__button_content"> <div class="note__title">Clinical data analysis</div></div>
         </div>
+    </a>
+
+    <ul class="mini--menu" >    
+    <li><a href="#introduction" class="top-link-mini" > Introduction</a></li>
+    <li><a href="#saturn" class="top-link-mini" >SATURN</a></li>
+    <li><a href="#bloomy" class="top-link-mini" >BLOOMY</a></li>
+    <li><a href="#covid19"  class="top-link-mini" >COVID19</a></li>
+    <li><a href="#current_work" class="top-link-mini" >Current work</a></li>
+    </ul>
+
+    <div class="note" id='introduction'> 
+    <div class='note__content__title'> Introduction </div>
+        I've carried out several projects analysing large and complex clinical datasets. Routinely those datasets are analysed with multivariate logistic regression by the collaborators. My role in those projects was a lot of work from the data-mining toolkit - understanding the datasets, visualisation and applied machine learning models such as SVMs, Random Forests and Decision Trees. Those methods often require more data, but the underlying algorithmics provide an alternative pathway to the clinical algorithms.
+        <!-- <div class='top--link--mini--div'><a href="#top" class="top-link-mini" >Top</a></div> -->
+    </div>  
+  
+    <div class="note" id='saturn'>
+        <div class='note__content__title'>  SATURN </div>
+            
+        <p>
+        SATURN project investigated the relationship of antibiotic prescribing to the colonization with the ESBLs, and MRSA - two multi-drug resistant bacteria common in the nosocomial settings. The dataset had ~10,000 patients, whose data were collected in three countries. The participants were screened at admission to ensure their colonization happened during the study.
+        </p>
+
+        <p>
+        <a href='#mrsa_esbl'>Figure</a> shows basic results. As expected, many more patients got colonized with ESBLs than MRSAs. Among those patients who took antibiotics, the level of colonization with both  ESBL and MRSA was ~3 times higher than in the respective group who weren't treated with antibiotics.
+        </p>
+    
+        <figure id='mrsa_esbl'>
+        <img src="{{ url_for('static', filename='img/saturn_counts.png') }}" alt="phagenome setup" width="70%" style="text-align: center;">
+        <figcaption> Number of patients at the most important junctions of the study. </figcaption>
+        </figure>
+
+        <p> 
+        To analyse this dataset I've deployed a <a href="https://www.mongodb.com">Mongodb</a> instance to keep and quickly access the patients within the dataset. Next, I implemented a complex encoder to produce a numerical vector representing each patient, to be later fed to Random Forest, Ada Boosting, Gradient boosting and other machine learning methods. In order to encode often complex antibiotics therapy - I first included a simple length of treatment per antibiotic. For each antibiotic combination, several days, any two antibiotics were taken together. Finally, I included a binary vector that, again for each combination, encoded if one of the antibiotics was prescribed after the other. This way, a complete description of the antibiotic therapy is included in a patient vector. 
+        </p>
+
+        <p>
+        The 10,000 patients did not fully and equally capture the diversity of the antibiotics therapy. Nevertheless, machine learning methods were able to distinguish more and less selective antibiotic combinaitons. The full publication can be found here:
+        <div class='note__content__date'> 2019, Journal of Antimicrobial Chemotherapy. </div>
+        Tacconelli, E., <u> Górska A.</u>, Angelis, G., Lammens, C., Restuccia, G., Huson, D. H.,Carević, B., Preoţescu, L., Carmeli, Y., Kazma, M., Spanu, T., Carrara, E., Malhotra-Kumar S. Gladstone B. P., <a href="https://www.sciencedirect.com/science/article/pii/S1198743X19302472"> Estimating the Association between Antibiotic Exposure and Colonisation with Antibiotic-resistant Bacteria using Machine-learning Methods</a>
+            
+        </p>
     </div>
 
 
-    <div class="note">
-    <div class='note__content__title'>  ValueDX </div>
-     Development of the clinical algorithm for diagnosis of the community acquired respiratory-tract infections.
-    </div>
-        
-    <div class="note">
-    <div class='note__content__title'> Current and future work </div>
-      
-        Readmissions
-        Building a machine-learning model to predict readmissions from clinical data., Collaborator: Prof. Dr. med. Mical Paul, Rambam Health Care Campus, Haifa, Israel.
+    <div class="note" id='bloomy'>
+      <div class='note__content__title'>  Bloomy </div>
+      <div class='note__content__date'> 2022, Lancet Infectectious Diseases  </div>
+      Tacconelli E., Göpel S., Gladstone B. P, Eisenbeis S., Hölzl F., Buhl M., <u>Górska A.</u>, Cattaneo C., Mischnik A., Rieg S., M Rohde A., Kohlmorgen B., Falgenhauer J., Trauth J., Käding N., Kramme E., Biehl L. M , Walker S. V , Peter S., Gastmeier P., Chakraborty T., JGT Vehreschild M., Seifert H., Rupp J., Kern W. V. <a href="https://www.thelancet.com/journals/laninf/article/PIIS1473-3099(21)00587-9/fulltext"> Articles Development and validation of BLOOMY prediction scores for 14-day and 6-month mortality in hospitalised adults with bloodstream infections: a multicentre, prospective, cohort study. </a> 
+    
+    <div class='top--link--mini--div'><a href="#top" class="top-link-mini" >Top</a></div>
     </div>
 
     
-<form action="{{ url_for('projects') }}">
-    <input type="submit" value="Back to Research" />
-</form>
+
+    <div class="note" id='covid19'>
+      <div class='note__content__title'>  COVID-19 </div>
+      <div class='note__content__date'> 2021, BMC Infectious Diseases  </div>
+      Gentilotti E., Savoldi A., Compri M., <u>Górska A.</u>, De Nardo P., Visentin A., Be G., Razzaboni E., Soriolo N., Meneghin D., Girelli D., Micheletto C., Mehrabi S., Righi E., Tacconelli E. <a href='https://bmcinfectdis.biomedcentral.com/articles/10.1186/s12879-021-06596-5'> Assessment of COVID-19 progression on day 5 from symptoms onset. </a>
+
+      
+      <div class='top--link--mini--div'><a href="#top" class="top-link-mini" >Top</a></div>
+    </div>
+
+
+    
+    <div class="note" id='current_work'>
+    <div class='note__content__title'> Current work </div>
+      
+    I wanted to approach those analyses again to compare the logistic regression with the machine learning tools that could lead to tree-based clinical algorithms such as Decision tree or Random Forest. 
+
+
+    So comparing the Logistic Regression -> point system path to the Random Forest -> Decision Tree path. And maybe publish the code base + visualisation alongside.
+
+
+            Readmissions
+        Building a machine-learning model to predict readmissions from clinical data., Collaborator: Prof. Dr. med. Mical Paul, Rambam Health Care Campus, Haifa, Israel.
+
+        Orchestra
+
+        <div class='top--link--mini--div'><a href="#top" class="top-link-mini" >Top</a></div>
+
+    </div>
+
+
+
+
 
 {% endblock %}

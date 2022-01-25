@@ -20,7 +20,7 @@
  <body>
   <div class="page">
         <div class="page__short__bio"> 
-            <div class="page__short__bio__main"> Ania Górska,  PHD </div> 
+            <div class="page__short__bio__main"> Anna Górska,  PHD </div> 
             <div class="page__short__bio__side">Bioinformatics perspective on infectious diseases</div> 
         </div>
     <div class="page__side page__header">
@@ -34,7 +34,7 @@
                     </li>
 
                     <li>
-                        <a href="{{ url_for('projects') }}" class="top-link {{'top-link-active' if active_page == 'projects' else ''}}">
+                        <a href="{{ url_for('projects') }}" class="top-link {{'top-link-active' if active_page == 'projects' or active_page == metaanalysis else ''}}">
                             Research
                         </a>
                     </li>
@@ -56,13 +56,7 @@
                     </li>
                 </ul>
             </nav>
-    
-            <div class='contact'>   
-                    <a href = "mailto: ania.gorska@univr.it"><font size="+3">&#9993;</font></a>
-                    <a href="https://www.researchgate.net/profile/Anna-Gorska-4"><i class="fab fa-researchgate" style="font-size:23px"></i></a>
-                    <a href="https://twitter.com/gvalchca_agr"><i class="fa fa-twitter" style="font-size:23px"></i></a>
-                    <a href="https://scholar.google.com/citations?hl=en&user=c8w_6xwAAAAJ&view_op=list_works&sortby=pubdate"><i class="ai ai-google-scholar ai-4x" style="font-size:23px"></i></a>
-                    <a href='https://orcid.org/0000-0003-3305-8711'><i class="ai ai-orcid ai-4x" style="font-size:23px"></i></a> </div>
+
         <!-- </header>  -->
          
     </div>
@@ -74,12 +68,28 @@
     
     <footer class="footer">
         <div class="footer__main"> created by Ania Górska </div>
-        <div class="footer__aside">  2022 </div>
+        <!-- <div class="footer__aside">   -->
+
+            <div class='contact'>  
+                <a href = "mailto: ania.gorska@univr.it"><font size="+3">&#9993;</font></a>
+                <a href="https://www.researchgate.net/profile/Anna-Gorska-4"><i class="fab fa-researchgate" style="font-size:23px"></i></a>
+                <a href="https://twitter.com/gvalchca_agr"><i class="fa fa-twitter" style="font-size:23px"></i></a>
+                <a href="https://scholar.google.com/citations?hl=en&user=c8w_6xwAAAAJ&view_op=list_works&sortby=pubdate"><i class="ai ai-google-scholar ai-4x" style="font-size:23px"></i></a>
+                <a href='https://orcid.org/0000-0003-3305-8711'><i class="ai ai-orcid ai-4x" style="font-size:23px"></i></a>
+            </div>
+        <!-- </div> -->
     </footer>
 
     </div>
+
+<script type="text/javascript">
+    document.querySelector('.top-link-mini')
+</script>
     
 </body>
 </html>
+
+
+
 
 
