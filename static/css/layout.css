@@ -241,15 +241,10 @@ a.page__header__main__a: visited {
 
 .banner-link: hover{
     opacity: 1.0;
-
-    /*font-size: 1.0rem;
-    color:  #0C696E;*/
-
 }
 
 figure {
     text-align: center;
-
 }
 
 
@@ -329,6 +324,22 @@ u {
     background-repeat: no-repeat;
     /*padding-bottom: 2.5rem;*/
     /*opacity: 0.8;*/
+}
+
+
+.blog-link{
+    padding: 1rem 4rem 1rem 4rem;
+    opacity:  0.8;
+    /*background-color: pink;
+    border: 1px solid red;*/
+}
+
+.blog-link:hover{
+    background-color: #CDE3E5;
+}
+
+.blog-link--content{
+    color: black;
 }
 
 .div__button:hover{

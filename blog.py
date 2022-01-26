@@ -23,6 +23,11 @@ def index():
     return render_template("index.html")
 
 
+@app.route('/on_emigration')
+def on_emigration():
+    return render_template('on_emigration.html')
+
+
 @app.route("/teaching")
 def teaching():
     return render_template("teaching.html")
