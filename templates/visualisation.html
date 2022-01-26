@@ -2,13 +2,14 @@
 {% set active_page = "projects" %}
 
 {% block content %}
+<div class="page__content">
 
- <a href="{{ url_for('visualisation') }}" class="top--link--research"> 
-    <div class="div__button div__button__visualisation">
-        <div class="div__button_content"> <div class="note__title">Visualisation</div></div>
-    </div>            
-</a>
-
+ <a href="{{ url_for('visualisation') }}" class="banner-link" 
+         style="background-image: url({{ url_for('static', filename='img/visualisation_button.png') }})"
+        > 
+        <div class="banner-link__dimmer"></div>
+        <div class="banner-link__title">Visualisation</div>
+</a>  
 
 <ul class="mini--menu" >    
    <li><a href="#introduction" class="top-link-mini" > Introduction</a></li>
@@ -32,6 +33,6 @@
 
        <div class='top--link--mini--div'><a href="#top" class="top-link-mini" >Top</a></div>
     </div>    
-    
+</div>    
     
 {% endblock %}

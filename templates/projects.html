@@ -2,45 +2,54 @@
 {% set active_page = "projects" %}
 
 {% block content %}
-      
-            
-        <a href="{{ url_for('metaanalysis') }}" class="top--link--research"> 
-        <div class="div__button div__button__metaanalysis">
-            <div class="div__button_content"><div class="note__title">Systematic review</div></div>
-        </div>
-        </a>
+      <div class="page__content page__content--border">
+    
 
-                                
-        <a href="{{ url_for('clinical') }}" class="top--link--research">
-        <div class="div__button div__button__clinicaldata">
-            <div class="div__button_content"> <div class="note__title">Clinical data analysis</div></div>
-        </div>
-        </a>
-
-                
-        <a href="{{ url_for('metagenomics') }}" class="top--link--research"> 
-        <div class="div__button div__button__metagenomics">
-            <div class="div__button_content"> 
-            <div class="note__title">Metagenomics</div>
-            </div>
-        </div>     
-        </a>
+        <a href="{{ url_for('clinical') }}" class="banner-link" 
+         style="background-image: url({{ url_for('static', filename='img/clinicaldata_button.png') }})"
+        > 
+        <div class="banner-link__dimmer"></div>
+        <div class="banner-link__title">Clinical data analysis</div>
+        </a>  
 
         
-        <a href="{{ url_for('molecular') }}" class="top--link--research"> 
-        <div class="div__button div__button__molecular"> 
-            <div class="div__button_content">  
-                <div class="note__title">Molecular dynamics</div>
-            </div>
-        </div>
-        </a>
+
+        <a href="{{ url_for('metaanalysis') }}" class="banner-link" 
+         style="background-image: url({{ url_for('static', filename='img/metaanalysis_button.png') }})"
+        > 
+        <div class="banner-link__dimmer"></div>
+        <div class="banner-link__title">Systematic review</div>
+        </a>  
 
 
-        <a href="{{ url_for('visualisation') }}" class="top--link--research"> 
-        <div class="div__button div__button__visualisation">
-            <div class="div__button_content"> <div class="note__title">Visualisation</div></div>
-        </div>            
-        </a>
+                
+        <a href="{{ url_for('metagenomics') }}" class="banner-link" 
+         style="background-image: url({{ url_for('static', filename='img/metagenomics_button.png') }})"
+        > 
+        <div class="banner-link__dimmer"></div>
+        <div class="banner-link__title">Metagenomics</div>
+        </a>  
+
+
+
+        <a href="{{ url_for('molecular') }}" class="banner-link" 
+         style="background-image: url({{ url_for('static', filename='img/molecular_button.png') }})"
+        > 
+        <div class="banner-link__dimmer"></div>
+        <div class="banner-link__title">Molecular dynamics</div>
+        </a>  
+
+
+       <a href="{{ url_for('visualisation') }}" class="banner-link" 
+         style="background-image: url({{ url_for('static', filename='img/visualisation_button.png') }})"
+        > 
+        <div class="banner-link__dimmer"></div>
+        <div class="banner-link__title">Visualisation</div>
+        </a>  
+
+
+    </div>
+
 
 
 

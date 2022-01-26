@@ -2,14 +2,14 @@
 
 {% block content %}
 
-            
-<a href="{{ url_for('metaanalysis') }}" class="top--link--research"> 
-<div class="div__button div__button__metaanalysis">
-    <div class="div__button_content"><div class="note__title">Systematic review</div></div>
-</div>
-</a>
+<div class="page__content">
 
-
+<a href="{{ url_for('metaanalysis') }}" class="banner-link" 
+ style="background-image: url({{ url_for('static', filename='img/metaanalysis_button.png') }})"
+> 
+<div class="banner-link__dimmer"></div>
+<div class="banner-link__title">Systematic review</div>
+</a>  
 
 <ul class="mini--menu" >    
 <li><a href="#introduction" class="top-link-mini" > Introduction</a></li>
@@ -28,7 +28,7 @@
     Applied bioinformaticians often find themselves at the end of the rope, not being able to interpret the results of their work due to a lack of domain knowledge and complexity of such results. In that case, we often try to access or create a resource that would complement the domain knowledge. The systematic review provides a framework for such queries. Thus I am interested in computerizing the process of systematic review so that eventually information can be retrieved from the set of publications.
     </p>
 
-    <div class='top--link--mini--div'><a href="#top" class="top-link-mini" >Top</a></div>
+    <!-- <div class='top--link--mini--div'><a href="#top" class="top-link-mini" >Top</a></div> -->
 
 </div>
 
@@ -47,39 +47,38 @@
     The project started in the March 2019, before the COVID pandemic changed the lives of the infectious diseases doctors and scientists. We have published the results of the DTA meta-analysis:
     </p>
 
-    <div class='note__content__entry'> 
+        <div class='note__content__subtitle'> related publications: </div>
+        
+        <div class='note__content__entry'> 
+            <div class='note__content__date'> 2022, Clinical Microbiology and Infection </div>
+            Gentilotti E.,  De Nardo P., Cremonini E., <u>Górska A.</u>, Mazzaferri F., Canziani M. L., Hellou M. M., Olchowski Y.,  Poran I., Leeflang  M., Villacian J.,  Goossens  H., Paul M., Tacconelli E.,
+            <a href="https://www.clinicalmicrobiologyandinfection.com/article/S1198-743X(21)00551-6/fulltext"> Diagnostic accuracy of point-of-care tests in acute community-acquired lower respiratory tract infections. A systematic review and meta-analysis</a>. 
+        </div>
 
-        <div class='note__content__date'> 2022, Clinical Microbiology and Infection </div>
-        Gentilotti E.,  De Nardo P., Cremonini E., Górska A., Mazzaferri F., Canziani M. L., Hellou M. M., Olchowski Y.,  Poran I., Leeflang  M., Villacian J.,  Goossens  H., Paul M., Tacconelli E.,
-        <a href="https://www.clinicalmicrobiologyandinfection.com/article/S1198-743X(21)00551-6/fulltext"> Diagnostic accuracy of point-of-care tests in acute community-acquired lower respiratory tract infections. A systematic review and meta-analysis</a>. 
-    </div>
+        <div class='note__content__entry'>
+            <div class='note__content__date'> 2020,  Clinical Microbiology and Infection </div>
+            Hellou, M. M., <u>Górska, A.</u>, Mazzaferri, F., Cremonini, E., Gentilotti, E., De Nardo, P., Paul, M.<a href="https://www.clinicalmicrobiologyandinfection.com/article/S1198-743X(20)30695-9/fulltext"> Nucleic-acid-amplification tests from respiratory samples for the diagnosis of coronavirus infections: systematic review and meta-analysis</a>
+        </div>
 
-    as well as a publication on the SARS-CoV-2 nucleic-acid-amplification detection techniques early in the pandemic: 
-
-    <div class='note__content__entry'> <div class='note__content__date'> 2020,  Clinical Microbiology and Infection </div>
-        Hellou, M. M., <b> Górska, A.</b>, Mazzaferri, F., Cremonini, E., Gentilotti, E., De Nardo, P., Paul, M.<a href="https://www.clinicalmicrobiologyandinfection.com/article/S1198-743X(20)30695-9/fulltext"> Nucleic-acid-amplification tests from respiratory samples for the diagnosis of coronavirus infections: systematic review and meta-analysis</a>
-    </div>
-    
-<div class='top--link--mini--div'><a href="#top" class="top-link-mini" >Top</a></div>
-
-
+        
+    <div class='top--link--mini--div'><a href="#top" class="top-link-mini" >Top</a></div>
 </div>
 
 <div class="note" id='current_work'> 
     <div class='note__content__title'> Current work </div>
     <p>
+    <div class='note__content__subtitle'> Automatization</div>
+
     Currently I'm working on automatization of the screening using Natural-Language processing tools and <a href="https://fasttext.cc">FastText</a>. To be able to automatise the initial screening in the systematic review process. 
     </p>
 
     <p>
+    <div class='note__content__subtitle'>  Visualizaiton </div>
     I also collaborate with doctors to create tools for the analysis of the content of publication set. 
     <!-- <a href="https://metaanalysis.aniagorska.me/"> Emerging topics </a> -->
     </p>
-
-
-
+    </div>
 </div>
-
 
 
 

@@ -2,15 +2,17 @@
 {% set active_page = "projects" %}
 
 
+
 {% block content %}
-    <a href="{{ url_for('molecular') }}" class="top--link--research"> 
-     <div class="div__button div__button__molecular"> 
-         <div class="div__button_content">  
-             <div class="note__title">Molecular dynamics</div>
-         </div>
-     </div>
-     </a>
-   
+<div class="page__content">
+
+   <a href="{{ url_for('molecular') }}" class="banner-link" 
+         style="background-image: url({{ url_for('static', filename='img/molecular_button.png') }})"
+        > 
+     <div class="banner-link__dimmer"></div>
+     <div class="banner-link__title">Molecular dynamics</div>
+   </a>  
+
    <ul class="mini--menu" >    
    <li><a href="#introduction" class="top-link-mini" > Introduction</a></li>
    <li><a href="#pna" class="top-link-mini" > Designing a PNA molecule to halt bacterial translation </a></li>
@@ -19,46 +21,44 @@
 
 
    <div class="note" id='introduction'>
-    <div class='note__content__title'>  Introduction  </div>
-    </div>
-
-
-
-
+      <div class='note__content__title'>  Introduction  </div>
+      <p>
+      However simplified, molecular dynamics (MD) provides an atom-level picture of the molecular mechanisms. I started using MD already for bachelor thesis, where I simulated the RNA helix and observed how the bounds break when one of the ends is pulled with a constant force. For my master's project, I joined a BioNano laboratory at the Center for New Technologies, University of Warsaw, under supervision of <a href="https://cent.uw.edu.pl/pl/person/prof-joanna-trylska/"> prof. Joanna Trylska </a>. The project was financed from the grant called <a href="http://bionano.cent.uw.edu.pl/projects/team-project/"> TEAM-project</a>. The master's project was my first experience with the problem of antibiotics and the phenomenon of the antibiotic-resistance.
+      </p>
+   </div>
 
    <div class='note' id='PNA'>
       <div class='note__content__title'> Designing a PNA molecule to halt bacterial translation </div>
-      <p>
-      For my master's project I joined a BioNano laboratory at the Center for New Technologies, University of Warsaw, under supervision of <a href="https://cent.uw.edu.pl/pl/person/prof-joanna-trylska/"> prof. Joanna Trylska </a>. The project was financed from the grant called <a href="http://bionano.cent.uw.edu.pl/projects/team-project/"> TEAM-project</a>.
-      </p> 
-
       <p>
       The project aimed at selecting a small (~10 bp) part of the bacterial 16S rRNA to be targeted with the molecule of artificial nucleic acid. I've annotated each base along the 16S rRNA molecule with information from multiple sources: mobility and accessibility from the molecular dynamics simulation, antibiotic binding sites, binding sites of other molecules, and so on. Later, after I graduated, the experimental partners confirmed that the anti-sense molecule targeting the site I've selected showed an inhibiting effect on the ribosome in the cell-free system.
       </p>
 
       <p>
-
-      The most difficult part of the project was conducting quite complex molecular dynamics of the small ribosomal subunit. I have developed a tool, MINT, that, given the .dcd file, provides a description of the behaviour of the RNA molecule during the molecular dynamics. A computational part of this project was largely conducted at the UCSD <a href="https://mccammon.ucsd.edu/"> Mc Cammon group</a>. The project resulted in the two publications: 
+      The most difficult part of the project was conducting quite complex molecular dynamics of the small ribosomal subunit. I have developed a tool, MINT, that, given the .dcd file, provides a description of the behaviour of the RNA molecule during the molecular dynamics. A computational part of this project was largely conducted at the UCSD <a href="https://mccammon.ucsd.edu/"> Mc Cammon group</a>. 
       </p>
+
+
+      <div class='note__content__subtitle'> related publications: </div>
 
       <div class='note__content__entry'>
          <div class='note__content__date'> 2016, The Journal of Physical Chemistry B </div>
-         Górska A., Markowska-Zgrajek A., Równicki M., Trylska J. <a href="https://pubs.acs.org/doi/abs/10.1021/acs.jpcb.6b02081"> Scanning of 16S ribosomal RNA for peptide nucleic acid and targets</a>
+         <u>Górska A.</u>, Markowska-Zgrajek A., Równicki M., Trylska J. <a href="https://pubs.acs.org/doi/abs/10.1021/acs.jpcb.6b02081"> Scanning of 16S ribosomal RNA for peptide nucleic acid and targets</a>
       </div>
 
       <div class='note__content__entry'>
          <div class='note__content__date'> 2015, Nucleic Acids Research </div>
-         Górska A., Jasiński M., and Trylska J., <a href="https://academic.oup.com/nar/article/43/17/e114/2414329"> MINT: Software to Identify Motifs and Short-Range Interactions in Trajectories of Nucleic Acids </a>
+         <u>Górska A.</u>, Jasiński M., and Trylska J., <a href="https://academic.oup.com/nar/article/43/17/e114/2414329"> MINT: Software to Identify Motifs and Short-Range Interactions in Trajectories of Nucleic Acids </a>
       </div>
    
-   <div class='note__content__title'>The project resulted in the two webservers:  </div>
-      <p> <a href="http://mint.cent.uw.edu.pl/"> MINT webserver </a> to analyse and visualise an RNA molecule from a pdb file.<br>
-      <a href="http://riboscanner.cent.uw.edu.pl"> RiboScanner </a> to browse and predict if the given sequence would bind to the bacterial rRNA. </p>
-   <!-- </div> -->
+      <div class='note__content__subtitle'> related webservers: </div>
+      <div class='note__content__entry'>
+         <a href="http://mint.cent.uw.edu.pl/">MINT webserver</a> to analyse and visualise an RNA molecule from a pdb file.<br>
+         <a href="http://riboscanner.cent.uw.edu.pl">RiboScanner</a> to browse and predict if the given sequence would bind to the bacterial rRNA.
+      </div>
 
-   <div class='top--link--mini--div'><a href="#top" class="top-link-mini" >Top</a></div>
+      <div class='top--link--mini--div'><a href="#top" class="top-link-mini" >Top</a></div>
 
+   </div>
 </div>
-
  
 {% endblock %}
