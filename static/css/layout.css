@@ -18,6 +18,12 @@ body {
     /*justify-items: center;*/
 }
 
+figure {
+    border: 0;
+    /*padding: 5px;*/
+    text-align: center;
+}
+
 .page {
     max-width: 55rem;
     /*justify-content: center;*/
@@ -402,7 +408,7 @@ u {
 
 .note__content__subtitle{
     padding-top: 0.5rem;
-    font-size: 1.1em;
+    font-size: 1em;
     color: #0C696E;
     text-transform: uppercase;
     font-family: 'PT Sans Narrow', sans-serif;

@@ -20,24 +20,20 @@
     <li><a href="#current_work" class="top-link-mini" >Current work</a></li>    
     </ul>
 
-    
-
-
 
     <div class="note" id='introduction'>
     <div class='note__content__title'>  Introduction  </div>
         <p>
-        I've started working on the metagenomics projects after I joined the <a href='https://uni-tuebingen.de/fakultaeten/mathematisch-naturwissenschaftliche-fakultaet/fachbereiche/informatik/lehrstuehle/algorithms-in-bioinformatics/people/daniel-huson/'>group of Prof. Daniel Huson at the University of Tuebingen</a>, where I did my PHD. I was always interested in the applied part of the bioinformatics, therefore all my PHD projects were driven by a biological or clinical questions. 
+        I was always interested in the applied bioinformatics. Therefore, some of my PhD projects focused on the Human Gut Microbiome, which is an essential factor in antibiotic resistance emergence in the context of medicine. The gut is full of nutrients and packed with bacteria, the gut constitutes a perfect environment for speeding up bacterial evolution. Each antibiotic therapy drives the emergence and retention of antibiotic resistance genes within the human gut microbiome. The <a href='https://uni-tuebingen.de/fakultaeten/mathematisch-naturwissenschaftliche-fakultaet/fachbereiche/informatik/lehrstuehle/algorithms-in-bioinformatics/people/daniel-huson/'>group of Prof. Daniel Huson at the University of Tuebingen</a> specialised in generating algorithmic tools to analyse ever growing in size and complexity metagenomics datasets.
         </p>
-        <p>
-        My PhD projects focused on the Human Gut Microbiome, which is an essential factor in antibiotic resistance emergence in the context of medicine. As it is full of nutrients and packed with bacteria, the gut constitutes a perfect environment for speeding up bacterial evolution. Each antibiotic therapy drives the emergence and retention of antibiotic resistance genes within the human gut microbiome.
-        </p>
+        
+       
     </div>
     
     <div class="note" id='megan'>
         <div class='note__content__title'>MEGAN</div>
         <p>
-        Microbiome analysis and especially metagenomics was one of the leading research fields of the prof. Huson's group where I did my PhD. We developed tools (<a href="https://uni-tuebingen.de/fakultaeten/mathematisch-naturwissenschaftliche-fakultaet/fachbereiche/informatik/lehrstuehle/algorithms-in-bioinformatics/software/megan6/">MEGAN</a>) and programmatic challenges of the microbiome analysis. My main contribution was setting up a  <a href="http://megan.informatik.uni-tuebingen.de/">MEGAN user community</a>, and providing the basic instructions. 
+        Microbiome analysis and especially metagenomics was one of the leading research fields of the prof. Huson's group where I did my PhD. We developed tools (<a href="https://uni-tuebingen.de/fakultaeten/mathematisch-naturwissenschaftliche-fakultaet/fachbereiche/informatik/lehrstuehle/algorithms-in-bioinformatics/software/megan6/">MEGAN</a>) and programmatic challenges of the microbiome analysis. My main contribution was setting up a  <a href="http://megan.informatik.uni-tuebingen.de/">MEGAN user community</a>, and providing the basic tutorials and content related the the common questions. 
         </p>
 
         <p>
@@ -77,15 +73,16 @@
         The depth of sequencing in the WGS allowed me to analyse through the assembly - I've assembled all of the samples and then re-mapped the reads to the fragments. The fragments were annotated with an array of the tools. Thus, each feature from the annotation tools could be tied to the overall prevalence within the sample by transforming and summarising the number of reads that mapped to the fragnemnt. 
         </p>
 
-        <figure>
+        <p>    
+        Although, the details on how the resistance spreads between bacteria within the human gut remain unknown, as does the role of horizontal gene transfer in this process. We presented a novel approach to the analysis of time-series whole-genome metagenomic sequencing data. This involves partitioning the scaffolds from the metagenomic assembly into groups corresponding to bacterial chromosomes, plasmids and those with prophages and transposons. Using specialized sequencing of the bacteriophages we were able to track the flow of ciprofloxacin resistance genes from bacterial chromosomes, through the plasmids, to prophages and phages (<a href='#cipro'>Figure</a>).
+        </p>    
+
+        <figure id='cipro'>
         <img src="{{ url_for('static', filename='img/ciprofloxacin.png') }}" alt="ciprofloxacin flow" width="79%">
         <figcaption>  Heatmap showing the transfer of the ciprofloxacin resistance (gyrA) from the bactieral chromosomes to the mobile genetic elements and all the way to the free viral-like particles.</figcaption>
         </figure>
 
-        <p>    
-        However, the details on how the resistance spreads between bacteria within the human gut remain unknown, as does the role of horizontal gene transfer in this process. We presented a novel approach to the analysis of time-series whole-genome metagenomic sequencing data. This involves partitioning the scaffolds from the metagenomic assembly into groups corresponding to bacterial chromosomes, plasmids and those with prophages and transposons. Using specialized sequencing of the bacteriophages we were able to track the flow of ciprofloxacin resistance genes from bacterial chromosomes, through the plasmids, to prophages and phages.
-        </p>    
-
+       
 
         <div class='note__content__subtitle'> related publications: </div>
         <div class='note__content__date'> 2018, Computational Biology and Chemistry </div>

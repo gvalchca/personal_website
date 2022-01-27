@@ -7,7 +7,7 @@
     
     
     <a href="{{ url_for('clinical') }}" class="banner-link" 
-         style="background-image: url({{ url_for('static', filename='img/clinicaldata_button.png') }})"
+         style="background-image: url({{ url_for('static', filename='img/clinicaldata2_button.png') }})"
         > 
     <div class="banner-link__dimmer"></div>
     <div class="banner-link__title">Clinical data analysis</div>
@@ -18,13 +18,19 @@
     <li><a href="#saturn" class="top-link-mini" >SATURN</a></li>
     <li><a href="#bloomy" class="top-link-mini" >BLOOMY</a></li>
     <li><a href="#covid19"  class="top-link-mini" >COVID19</a></li>
+    <li><a href="#orchestra"  class="top-link-mini" >ORCHESTRA</a></li>
     <li><a href="#current_work" class="top-link-mini" >Current work</a></li>
     </ul>
 
     <div class="note" id='introduction'> 
     <div class='note__content__title'> Introduction </div>
-        I've carried out several projects analysing large and complex clinical datasets. Routinely those datasets are analysed with multivariate logistic regression by the collaborators. My role in those projects was a lot of work from the data-mining toolkit - understanding the datasets, visualisation and applied machine learning models such as SVMs, Random Forests and Decision Trees. Those methods often require more data, but the underlying algorithmics provide an alternative pathway to the clinical algorithms.
-        <!-- <div class='top--link--mini--div'><a href="#top" class="top-link-mini" >Top</a></div> -->
+    <p>
+        I've carried out several projects analysing large and complex clinical datasets. Routinely those datasets are evaluated with in the first place, univariate and then multivariate logistic regression. However, I'm interested in applying the data-mining toolkit to understanding the datasets, including visualisation and applied machine learning models such as Support Vector Machines, Random Forests and Decision Trees.
+    </p>
+    <p>
+        Those methods often require more data, but the underlying algorithmics provides an alternative view on the dataset's inner structure, and thus alternative clinical algorithms. Such work always requires deep domain knowledge, or what follows, a tight-communication loop with the clinical collaborators.
+    </p>
+        
     </div>  
   
     <div class="note" id='saturn'>
@@ -61,26 +67,47 @@
 
     <div class="note" id='bloomy'>
       <div class='note__content__title'>  Bloomy </div>
+        <p>
+        Bloomy project was a multi-centre collaboration of the German hospital-clinics aiming to develop an as early as a possible scoring system for the progression of sepsis. The dataset included ~2,500 patients with sepsis. The study followed patients longitudinally, including a post-hospitalisation follow-up, with quality of life scores. The dataset had thousands of features describing patients' demographics and comorbidities, hospital stay, treatment, antibiotics and microbiological information such as infecting bacteria. The dataset was quite complex but riddled with missing values - that needed to be inputted. 
+
+        </p>
+
+        <p>
+        We have approached it in two ways: analysing the regression coefficients and Machine Learning methods. I build sequential models at different time points in the treatment: 3rd, 7th, end of therapy timepoints, using mainly RF, SVMs and ADABoost models (<a href='#bloomy_models'>Figure</a>). Those were subsequenlty used to select variables for the Cox proportional hazards, logistic regression, and parametric survival regression.
+        </p>
 
 
-      
-        
+        <figure id='bloomy_models'>
+        <img src="{{ url_for('static', filename='img/day_end_of_therapy_step_1_best_classifiers.jpg') }}" alt="phagenome setup" width="70%">
+        <figcaption> Performance across various models at the end of therapy for mortality outcome. Models were trained 100 times, for the dataset split into training and testing, undersampled to maintain the equal distribution of the classes for binary classification. </figcaption>
+        </figure>
+
+
+            
         <div class='note__content__subtitle'>publication: </div>
         <div class='note__content__entry'> 
           <div class='note__content__date'> 2022, Lancet Infectectious Diseases  </div>
           Tacconelli E., Göpel S., Gladstone B. P, Eisenbeis S., Hölzl F., Buhl M., <u>Górska A.</u>, Cattaneo C., Mischnik A., Rieg S., M Rohde A., Kohlmorgen B., Falgenhauer J., Trauth J., Käding N., Kramme E., Biehl L. M , Walker S. V , Peter S., Gastmeier P., Chakraborty T., JGT Vehreschild M., Seifert H., Rupp J., Kern W. V. <a href="https://www.thelancet.com/journals/laninf/article/PIIS1473-3099(21)00587-9/fulltext"> Development and validation of BLOOMY prediction scores for 14-day and 6-month mortality in hospitalised adults with bloodstream infections: a multicentre, prospective, cohort study. </a> 
         </div>
     
-    <div class='top--link--mini--div'><a href="#top" class="top-link-mini" >Top</a></div>
+        <div class='top--link--mini--div'><a href="#top" class="top-link-mini" >Top</a></div>
     </div>
 
 
-
     <div class="note" id='covid19'>
-      <div class='note__content__title'>  COVID-19 </div>
+      <div class='note__content__title'>  COVID19 </div>
+        <p>
+        COVID19 pandemic added a lot of work to the collective plate of the Infectious Diseases department in Verona. North of Italy was one of the most affected regions in the first months of 2020. However, thanks to the experience, we quickly updated the data-collection tools to study the new virus. This dataset was too small to attempt a ML-based prediction, nevertheless we observed the development of the parameters for the positive/negative outcomes <a href="#covid_models">Figure</a>. 
+        </p>
+        <p>
+        
+            <figure id='covid_models'>
+            <img src="{{ url_for('static', filename='img/death_or_ventilator_recovery_LAB_TESTS_blood_boxplot.png') }}" alt="covid-boxplots" width="100%">
+            <figcaption>The parameters across days since symptoms onset (x-axis) and outcome: recovered and mechanical ventilation or death. </figcaption>
+            </figure>
+        </p>
 
         <div class='note__content__subtitle'>publication: </div>
-
             <div class='note__content__entry'> 
             <div class='note__content__date'> 2021, BMC Infectious Diseases  </div>
             Gentilotti E., Savoldi A., Compri M., <u>Górska A.</u>, De Nardo P., Visentin A., Be G., Razzaboni E., Soriolo N., Meneghin D., Girelli D., Micheletto C., Mehrabi S., Righi E., Tacconelli E. <a href='https://bmcinfectdis.biomedcentral.com/articles/10.1186/s12879-021-06596-5'> Assessment of COVID-19 progression on day 5 from symptoms onset. </a>
@@ -90,26 +117,39 @@
     </div>
 
 
-    
+    <div class="note" id='orchestra'>
+        <div class='note__content__title'> ORCHESTRA </div>
+        <p>
+        <a href="https://orchestra-cohort.eu/">Orchestra</a> is a large, international, interdisciplinary project funded by EU with almost 30 million euros - of which our group constitutes a coordination package. The call was opened in an emergency manner in March 2020 as a part of the EU response to the pandemic. I was engaged at the project-proposal writing stage, creating visualisations and reviewing sections related to data management.
+        </p>
+
+        <p>
+        Since the beginning of the project, October 2020, I've been devoting a considerable amount of my time to the Orchestra project. I am a representative of the WP1 to WP7 data-management package (<a href='#orchestra_wps'>Figure</a>), helping with data flow and communication across the project.
+        </p>
+
+        <figure id='orchestra_wps'>
+            <img src="{{ url_for('static', filename='img/orchestra_wp_structure.png') }}" alt="covid-boxplots" width="80%">
+            <figcaption>Orchestra work-package structure. The arrows correspond to the communication and data transfer. The project consists of the four work packages bringing together cohorts of participants, WP6 - a molecular analysis package, WP7 to maintain, protect and transfer data to the WP8, which is a statistical analysis package. Finally, WP10 is responsible for visualisation and communication.</figcaption>
+        </figure>
+        
+        <p>
+        For the ORCHESTRA project, I only from time to time small hands-on-data tasks. My main tasks require more project management and communication skills.
+        </p>
+
+
+    </div>
+
+
     <div class="note" id='current_work'>
     <div class='note__content__title'> Current work </div>
-      
-        <div class='note__content__subtitle'>Clinical algorithms</div>    
-
-        I wanted to approach those analyses again to compare the logistic regression with the machine learning tools that could lead to tree-based clinical algorithms such as Decision tree or Random Forest. 
-
-        So comparing the Logistic Regression -> point system path to the Random Forest -> Decision Tree path. And maybe publish the code base + visualisation alongside.
-
 
         <div class='note__content__subtitle'>Readmissions</div>
-        Building a machine-learning model to predict readmissions from clinical data., Collaborator: <a href="https://www.rambam.org.il/en/about_rambam/leadership/?itemid=%7B6a6857a5-eeb2-47cb-aff5-103da5b1425a%7D"> Prof. Dr. med. Mical Paul </a> from Rambam Health Care Campus.
+        <a href="https://www.rambam.org.il/en/about_rambam/leadership/?itemid=%7B6a6857a5-eeb2-47cb-aff5-103da5b1425a%7D"> Prof. Dr. med. Mical Paul</a> approached me to apply the machine learning models to predict the <i> false discharges </i>, i.e. people who have returned to the hospital. 
 
-        <div class='note__content__subtitle'>Orchestra</div>
-
-        <a href="https://orchestra-cohort.eu/">Orchestra</a>
-
-        <div class='top--link--mini--div'><a href="#top" class="top-link-mini" >Top</a></div>
-
+        <div class='note__content__subtitle'>Clinical algorithms</div>    
+        Throughout these projects, I've developed a toolkit to perform the ML pipeline for any new dataset rapidly. I wanted to extend this to first compare the performance of the classifiers to the multivariate classification and logistic regression methods and then extend it to the alternative tree-based clinical algorithms.
+    
+    <div class='top--link--mini--div'><a href="#top" class="top-link-mini" >Top</a></div>
     </div>
 
 
