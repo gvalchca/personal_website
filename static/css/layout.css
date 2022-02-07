@@ -13,7 +13,23 @@ a {
 figure {
     border: 0;
     text-align: center;
+    margin: 0;
 }
+
+figure img {
+    /* width: 100%; */
+}
+
+@font-face {
+    font-family: PT Sans Narrow; 
+    src: url('../fonts/PTSansNarrow-Regular.ttf');
+} 
+
+@font-face{
+    font-family: PT Sans;
+    src: url('../fonts/PTSans-Regular.ttf');  
+}
+
 
 figcaption {
     font-size: 0.9em;
@@ -532,7 +548,7 @@ a:hover{
 }
 
 .footer {
-    display: flex;
+    display: flex;  
     justify-items: center;
     position: relative;
     align-items: center;
@@ -583,6 +599,7 @@ a:hover{
     display: inline-block;
     float: right;
     padding-right: 1rem;
+    align-items: center;
 }
 
 @media screen and (min-width: 640px) {

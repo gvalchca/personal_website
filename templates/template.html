@@ -4,28 +4,13 @@
    <meta charset="utf-8">
    <title>A. Gorska personal page</title>
     <link rel=stylesheet type=text/css href="{{ url_for('static', filename='css/layout.css') }}">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    
-
-
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
-
-
     <meta name="viewport" content="width=device-width, initial-scale=1">
- </head>
+</head>
 
- <body>
-  <div class="page">
- <!--    <div class="page__header"> 
-        <div class="page__header__main"> Anna Górska,  PHD </div> 
-        <div class="page__header__side">Bioinformatics perspective on infectious diseases</div> 
-    </div> -->
-    
-    <div class="page__navigation">
-        <div class="page__header__main"> <a href="{{ url_for('index') }}" class="page__header__main__a">Anna Górska, PHD</a></div> 
+    <body>
+    <div class="page">    
+        <div class="page__navigation">
+            <div class="page__header__main"> <a href="{{ url_for('index') }}" class="page__header__main__a">Anna Górska, PHD</a></div> 
                 <ul class="page__navigation__list">
                     <li>
                         <a href="{{ url_for('index') }}" class="top-link {{'top-link-active' if active_page == 'about' else ''}}">
@@ -64,16 +49,33 @@
     
     <footer class="footer">
         <div class="footer__main"> &copy Ania Górska 2022</div>
-        <!-- <div class="footer__aside">   -->
 
-            <div class='contact'>  
-                <a href = "mailto: ania.gorska@univr.it"><font size="+3">&#9993;</font></a>
-                <a target="_blank" href="https://www.researchgate.net/profile/Anna-Gorska-4"><i class="fab fa-researchgate" style="font-size:23px"></i></a>
-                <a target="_blank" href="https://twitter.com/gvalchca_agr"><i class="fa fa-twitter" style="font-size:23px"></i></a>
-                <a target="_blank" href="https://scholar.google.com/citations?hl=en&user=c8w_6xwAAAAJ&view_op=list_works&sortby=pubdate"><i class="ai ai-google-scholar ai-4x" style="font-size:23px"></i></a>
-                <a target="_blank" href='https://orcid.org/0000-0003-3305-8711'><i class="ai ai-orcid ai-4x" style="font-size:23px"></i></a>
-            </div>
-        <!-- </div> -->
+        <div class='contact'>  
+            
+            <a href = "mailto: ania.gorska@univr.it">
+                <img style="height: 25px; padding:4px; padding-bottom:8px" src="{{ url_for('static', filename='img/mail_icon.png') }}">
+            </a>
+
+            <a target="_blank" href="https://www.researchgate.net/profile/Anna-Gorska-4">
+                <img style="height: 30px; padding:4px" src="{{ url_for('static', filename='img/icons8-researchgate-32.png') }}">
+            </a>
+
+            <a target='_blank' href="https://twitter.com/gvalchca_agr">
+                <img style="height: 30px; padding:4px" src="{{ url_for('static', filename='img/icons8-twitter-30.png') }}">
+            </a>
+
+            <a target="_blank" href="https://scholar.google.com/citations?hl=en&user=c8w_6xwAAAAJ&view_op=list_works&sortby=pubdate">
+                <img style="height: 30px; padding:4px" src="{{ url_for('static', filename='img/icons8-google-scholar-24.png') }}">
+            </a>
+            
+            <a target="_blank" href='https://orcid.org/0000-0003-3305-8711'>
+                <img style="height: 30px; padding:4px" src="{{ url_for('static', filename='img/icons8-orcid-32.png') }}">
+            </a>
+
+
+
+        </div>
+        
     </footer>
 
     </div>
