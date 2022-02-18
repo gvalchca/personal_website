@@ -27,6 +27,10 @@ def index():
 def on_emigration():
     return render_template('on_emigration.html')
 
+@app.route('/on_teaching')
+def on_teaching():
+    return render_template('on_teaching.html')
+
 
 @app.route("/teaching")
 def teaching():

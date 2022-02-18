@@ -1,7 +1,15 @@
 {% extends "template.html" %}
 {% set active_page = "blog" %}
 {% block content %}
+
 <div class="page__content page__content--border">
+	<a href="{{ url_for('on_teaching') }}" class="blog-link note">
+		<h4 class='note__content__title'>Teaching philosophy</h4>
+		<div class='note__content__date'> February 2022 </div>
+		<p class="blog-link--content">
+		I firmly believe in the Humboldtian Ideal that teaching is an inalienable part of academic life, and, that publicly funded researchers need to be also engaged teachers of their students, lab members, and peers...
+		</p>
+	</a>
 
 	<a href="{{ url_for('on_emigration') }}" class="blog-link note">
 		<h4 class='note__content__title'>A voice for informed emigration</h4>
