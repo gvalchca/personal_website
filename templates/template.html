@@ -2,7 +2,8 @@
 <html lang="en" dir="ltr">
  <head>
    <meta charset="utf-8">
-   <title>A. Gorska personal page</title>
+   <title>A. Gorska bioinformatics</title>
+    <link rel="icon" href="{{ url_for('static', filename='img/favicon.png') }}">
     <link rel=stylesheet type=text/css href="{{ url_for('static', filename='css/layout.css') }}">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
@@ -12,11 +13,19 @@
         <div class="page__navigation">
             <div class="page__header__main"> <a href="{{ url_for('index') }}" class="page__header__main__a">Anna Górska, PHD</a></div> 
                 <ul class="page__navigation__list">
-                    <li>
+                    <!-- <li>
                         <a href="{{ url_for('index') }}" class="top-link {{'top-link-active' if active_page == 'about' else ''}}">
                             About
                         </a>
                     </li>
+ -->
+                    
+                    <li>
+                        <a href="{{ url_for('publications') }}" class="top-link {{'top-link-active' if active_page == 'publications' or active_page == metaanalysis else ''}}">
+                            Publications
+                        </a>
+                    </li>
+            
 
                     <li>
                         <a href="{{ url_for('projects') }}" class="top-link {{'top-link-active' if active_page == 'projects' or active_page == metaanalysis else ''}}">
@@ -25,7 +34,7 @@
                     </li>
             
                     <li>
-                        <a href="{{ url_for('cv') }}" class="top-link {{'top-link-active' if active_page == 'cv' else ''}}" >Experience
+                        <a href="{{ url_for('cv') }}" class="top-link {{'top-link-active' if active_page == 'cv' else ''}}" >CV
                         </a>
                     </li>
 
@@ -35,20 +44,18 @@
                         </a>
                     </li>
                     
-                    <li>
+                    <!-- <li>
                         <a href="{{ url_for('blog') }}" class="top-link {{'top-link-active' if active_page == 'blog' else ''}}">Thoughts
                         </a>
-                    </li>
+                    </li> -->
                 </ul>
-            
-         
     </div>
     
          {% block content %}
          {% endblock %}
     
     <footer class="footer">
-        <div class="footer__main"> &copy Ania Górska 2022</div>
+        <div class="footer__main"> &copy Ania Górska 2024</div>
 
         <div class='contact'>  
             
@@ -71,13 +78,8 @@
             <a target="_blank" href='https://orcid.org/0000-0003-3305-8711'>
                 <img style="height: 30px; padding:4px" src="{{ url_for('static', filename='img/icons8-orcid-32.png') }}">
             </a>
-
-
-
         </div>
-        
     </footer>
-
     </div>
     <button id="go-to-top" class="go-to-top">
         <i class="fa fa-arrow-up" aria-hidden="true"></i>
@@ -113,9 +115,7 @@
             }
         })
     })
-
 </script>
-    
 </body>
 </html>
 

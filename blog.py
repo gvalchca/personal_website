@@ -31,6 +31,9 @@ def on_emigration():
 def on_teaching():
     return render_template('on_teaching.html')
 
+@app.route("/publications")
+def publications():
+    return render_template("publications.html")
 
 @app.route("/teaching")
 def teaching():
